@@ -125,6 +125,14 @@ public:
         init() ;
     }
 
+#ifdef _WIN64
+    template <typename T>
+    Vector(T size, typename Rcpp::traits::enable_if<traits::same_type<T, R_xlen_t>::value, void>::type* = 0) {
+        Storage::set__( Rf_allocVector( RTYPE, size) ) ;
+        init() ;
+    }
+#endif
+
     Vector( const int& size ) {
         Storage::set__( Rf_allocVector( RTYPE, size) ) ;
         init() ;

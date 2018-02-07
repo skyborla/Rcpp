@@ -49,6 +49,11 @@ template<> struct r_sexptype_traits<float>{ enum{ rtype = REALSXP } ; } ;
 template<> struct r_sexptype_traits<long>{ enum{ rtype = REALSXP } ; } ;
 template<> struct r_sexptype_traits<unsigned long>{ enum{ rtype = REALSXP } ; } ;
 
+#ifdef _WIN64
+template<> struct r_sexptype_traits<R_xlen_t>{ enum{ rtype = REALSXP } ; } ;
+template<> struct r_sexptype_traits<unsigned R_xlen_t>{ enum{ rtype = REALSXP } ; } ;
+#endif
+
 /* long double are represented as numeric vectors because we cannot do better in R
    some precision will be lost though
 */

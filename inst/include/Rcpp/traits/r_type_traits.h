@@ -177,6 +177,12 @@ template<> struct r_type_traits< std::pair<const std::string,std::complex<double
 template<> struct r_type_traits< std::complex<float> >{ typedef r_type_primitive_tag r_category ; } ;
 template<> struct r_type_traits< std::pair<const std::string,std::complex<float> > >{ typedef r_type_primitive_tag r_category ; } ;
 
+/* ptrdiff_t for Windows */
+#ifdef _WIN64
+template<> struct r_type_traits<R_xlen_t>{ typedef r_type_primitive_tag r_category ; } ;
+template<> struct r_type_traits< std::pair<const std::string,R_xlen_t> >{ typedef r_type_primitive_tag r_category ; } ;
+#endif
+
 } // traits
 } // Rcpp
 

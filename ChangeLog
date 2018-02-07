@@ -1,3 +1,10 @@
+2017-12-19  Kevin Ushey  <kevinushey@gmail.com>
+        
+        * inst/include/Rcpp/traits/r_sexptype_traits.h: Handle R_xlen_t on
+        Windows
+        * inst/include/Rcpp/traits/r_type_traits.h: Idem
+        * inst/include/Rcpp/vector/Vector.h: Idem
+
 2018-01-21  Dirk Eddelbuettel  <edd@debian.org>
 
         * README.md: Added new section 'Support'
