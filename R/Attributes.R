@@ -425,7 +425,7 @@ compileAttributes <- function(pkgdir = ".", verbose = getOption("verbose")) {
     unlink(file.path(rDir, "RcppExports.R"))
 
     # get a list of all source files
-    cppFiles <- list.files(srcDir, pattern = "\\.((c(c|pp)?)|(h(pp)?))$", ignore.case = TRUE)
+    cppFiles <- list.files(srcDir, pattern = "\\.((c(c|pp)?)|(h(pp)?))$", ignore.case = TRUE, recursive=TRUE)
 
     # don't include RcppExports.cpp
     cppFiles <- setdiff(cppFiles, "RcppExports.cpp")
